@@ -154,6 +154,7 @@ export class GitHubService {
               type: item.type === 'file' ? 'blob' : 'tree',
               sha: item.sha,
               mode: item.type === 'file' ? '100644' : '040000',
+              url: item.url || item.git_url || item.html_url || '',
             }))
           : [];
       } catch {
